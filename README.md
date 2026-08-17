@@ -1,0 +1,37 @@
+# Angolo di Benni — sito demo (multi-pagina)
+
+Sito vetrina per un negozio di abbigliamento fittizio ("Angolo di Benni"), ristrutturato in versione **multi-pagina** con foglio di stile condiviso, sullo stesso modello usato per il sito "Da Tommy".
+
+## Struttura
+
+```
+index.html        → Home (hero, fascia info rapida, link alle sezioni)
+collezione.html    → Catalogo ad accordion per categoria + guida taglie
+outfit.html         → Outfit pronti
+chi-siamo.html     → Storia del negozio + recensioni
+contatti.html      → Contatti, orari, mappa
+style.css           → Tutto lo stile del sito, condiviso da ogni pagina
+script.js            → Tutta la logica (catalogo, carrello, filtri, modal), condivisa da ogni pagina
+images/             → Tutte le foto prodotto e del negozio
+```
+
+Ogni pagina HTML è ora molto più leggera: contiene solo il contenuto di quella sezione, non più uno stile e uno script ripetuti — esattamente come nel sito "Da Tommy".
+
+## Come usarlo su GitHub Pages
+
+1. Carica **tutti** i file (le 5 pagine .html, style.css, script.js) e la cartella images/ nella root del repository, mantenendo questa struttura piatta (nessuna sottocartella per le pagine).
+2. Su GitHub Pages, la home resta `index.html` come prima: `https://tuonome.github.io/repo/`.
+3. Le altre pagine sono raggiungibili come `.../collezione.html`, `.../outfit.html`, ecc.
+
+## Novità di questa versione
+
+- **Sito multi-pagina** invece di scroll unico: ogni sezione ha la sua pagina, con una vera navigazione (non più ancore su un'unica pagina lunghissima).
+- **Meno HTML, più CSS**: stile e logica sono in due file esterni condivisi (`style.css`, `script.js`) invece di essere ripetuti identici in ogni pagina.
+- **Sezioni raggruppate**: la guida taglie è ora dentro la pagina Collezione (era troppo corta per stare da sola), le recensioni sono dentro Chi Siamo.
+- **Home più leggera**: hero, fascia rapida con indirizzo/orari/contatti, e tre link visivi alle altre sezioni.
+- **Il carrello (richiesta) ora è persistente tra le pagine**: se aggiungi un pezzo su Collezione e vai su Contatti, la richiesta resta salvata (usa il localStorage del browser, non il server).
+- Navigazione: la voce di menu della pagina in cui ti trovi è evidenziata in oro.
+
+## Nota
+
+`Fashionista.jpg` (foto dell'interno del negozio) non è inclusa in questo pacchetto perché l'avevi già caricata tu direttamente su GitHub — assicurati solo di non cancellarla quando carichi la cartella images/.
